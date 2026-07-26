@@ -1,0 +1,65 @@
+(() => {
+  const toggle = document.querySelector(".nav-toggle");
+  const mobile = document.querySelector("#mobile-nav");
+
+  if (toggle && mobile) {
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      mobile.hidden = open;
+    });
+    mobile.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.setAttribute("aria-expanded", "false");
+        mobile.hidden = true;
+      });
+    });
+  }
+
+  const items = document.querySelectorAll(".timeline__item");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
+    );
+    items.forEach((el, i) => {
+      el.style.transitionDelay = `${Math.min(i * 60, 360)}ms`;
+      io.observe(el);
+    });
+  } else {
+    items.forEach((el) => el.classList.add("is-visible"));
+  }
+
+  const form = document.querySelector("#lead-form");
+  const status = document.querySelector(".form__status");
+  if (form && status) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        status.textContent = "Заполните обязательные поля.";
+        form.reportValidity();
+        return;
+      }
+      const data = new FormData(form);
+      const lines = [
+        `Имя: ${data.get("name")}`,
+        `Компания: ${data.get("company")}`,
+        `Почта: ${data.get("email")}`,
+        "",
+        String(data.get("message") || ""),
+      ];
+      const subject = encodeURIComponent("Заявка: стабилизация delivery · PATH");
+      const body = encodeURIComponent(lines.join("\n"));
+      status.textContent = "Открываем письмо в почтовом клиенте…";
+      window.location.href = `mailto:sorvanovon@yandex.ru?subject=${subject}&body=${body}`;
+      form.reset();
+    });
+  }
+})();
