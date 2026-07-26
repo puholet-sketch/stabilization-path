@@ -1,18 +1,18 @@
 # stabilization-path
 
-context_version: 1
+context_version: 2
 updated: 2026-07-26
 
 ## Цель
-Публичный консалтинг-сайт: путь стабилизации IT-delivery (анонимно, без названия СК).
-Источник программы: эпик VIRTUMGMT-136 + доп. практики Jira-бордов.
+Публичный консалтинг-сайт PATH: путь стабилизации IT-delivery.
 
 ## Статус
-В разработке → GitHub Pages + ссылка в Porfolio.
+- Live: https://puholet-sketch.github.io/stabilization-path/
+- Repo: https://github.com/puholet-sketch/stabilization-path
+- В портфолио: кейс стабилизации + карточка в `#personal`
 
 ## Важно
-- Не публиковать имя заказчика / внутренние URL портала.
-- Палитра Virtu: `#C00000` + `#1A1A1A`.
+Без имени СК и внутренних URL портала. Доп. к эпику: Timeline, sprint-артефакты, created/resolved, поток по людям.
 
 ## Следующий шаг
-Собрать index + pages + portfolio card.
+Ожидает обратную связь / заявки.
