@@ -16,7 +16,7 @@
     });
   }
 
-  const tabs = document.querySelectorAll(".tabs__btn");
+  const tabs = document.querySelectorAll(".filters__btn");
   const blocks = document.querySelectorAll(".block");
 
   tabs.forEach((btn) => {
