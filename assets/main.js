@@ -16,26 +16,21 @@
     });
   }
 
-  const items = document.querySelectorAll(".timeline__item");
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
-    );
-    items.forEach((el, i) => {
-      el.style.transitionDelay = `${Math.min(i * 60, 360)}ms`;
-      io.observe(el);
+  const tabs = document.querySelectorAll(".tabs__btn");
+  const blocks = document.querySelectorAll(".block");
+
+  tabs.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.block;
+      tabs.forEach((other) => {
+        other.classList.toggle("is-active", other === btn);
+        other.setAttribute("aria-selected", other === btn ? "true" : "false");
+      });
+      blocks.forEach((block) => {
+        block.classList.toggle("is-hidden", id !== "all" && block.dataset.block !== id);
+      });
     });
-  } else {
-    items.forEach((el) => el.classList.add("is-visible"));
-  }
+  });
 
   const form = document.querySelector("#lead-form");
   const status = document.querySelector(".form__status");

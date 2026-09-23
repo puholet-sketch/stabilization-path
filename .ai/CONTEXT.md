@@ -1,18 +1,13 @@
 # stabilization-path
 
-context_version: 2
-updated: 2026-07-26
+project: PATH
+v: 4
 
-## Цель
-Публичный консалтинг-сайт PATH: путь стабилизации IT-delivery.
+Публичный консалтинг-сайт PATH: стабилизация IT-delivery в стиле актуального Atlassian / Jira Cloud.
 
-## Статус
-- Live: https://puholet-sketch.github.io/stabilization-path/
-- Repo: https://github.com/puholet-sketch/stabilization-path
-- В портфолио: кейс стабилизации + карточка в `#personal`
+Live: https://puholet-sketch.github.io/stabilization-path/
+Repo: https://github.com/puholet-sketch/stabilization-path
 
-## Важно
-Без имени СК и внутренних URL портала. Доп. к эпику: Timeline, sprint-артефакты, created/resolved, поток по людям.
+Без имени СК, внутренних URL и ключей задач в UX. Источник — эпик стабилизации + 24 дочерние меры + практики ретро.
 
-## Следующий шаг
-Ожидает обратную связь / заявки.
+Yandex SourceCraft Sites yaml уже в репо; зеркала git.sourcecraft.dev на момент публикации ещё не было.

@@ -2,10 +2,8 @@
 
 | Путь | Зачем |
 |------|--------|
-| `index.html` | Консалтинг-лендинг PATH |
-| `assets/styles.css` | Стили (Virtu red/black) |
-| `assets/main.js` | Нав, анимация timeline, mailto |
+| `index.html` | PATH лендинг: маршрут + 6 блоков мер |
+| `assets/styles.css` | Atlassian / Jira Cloud light UI |
+| `assets/main.js` | Нав, фильтр блоков, mailto |
+| `.sourcecraft/sites.yaml` | SourceCraft Sites |
 | `README.md` | Live URL |
-
-## Источник
-Программа VIRTUMGMT-136 (анонимизировано) + доп. Jira-борды (Timeline, sprint artifacts, created/resolved, people flow).

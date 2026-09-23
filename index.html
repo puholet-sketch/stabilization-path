@@ -3,39 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Консалтинг по стабилизации IT-delivery: релизы, качество требований, план/факт, Jira Timeline и борды контроля — путь от хаоса к контролю." />
+  <meta name="description" content="PATH — программа стабилизации IT-delivery: релизная дисциплина, качество входа, план/факт, отчётность, люди и контур Jira. От хаоса к контролю." />
   <title>PATH · Стабилизация delivery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
 
-  <header class="top">
-    <div class="top__inner">
+  <header class="topbar">
+    <div class="topbar__inner">
       <a class="brand" href="#top" aria-label="PATH — на главную">
-        <span class="brand__mark" aria-hidden="true"></span>
-        <span class="brand__text">PA<span>TH</span></span>
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 17.5 10.2 6.2a1.6 1.6 0 0 1 2.8 0L19 17.5H4Z" fill="#1868DB"/></svg>
+        </span>
+        <span class="brand__text">PATH</span>
+        <span class="lozenge lozenge--subtle">Stabilization</span>
       </a>
       <nav class="nav" aria-label="Разделы">
-        <a href="#pain">Проблема</a>
         <a href="#route">Маршрут</a>
-        <a href="#boards">Jira</a>
-        <a href="#program">Программа</a>
+        <a href="#measures">Мероприятия</a>
+        <a href="#boards">Контур</a>
         <a href="#offer">Форматы</a>
-        <a href="#contact" class="nav__cta">Заявка</a>
+        <a href="#contact" class="btn btn--primary btn--sm">Заявка</a>
       </nav>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
-        <span></span><span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
     <nav id="mobile-nav" class="nav-mobile" hidden>
-      <a href="#pain">Проблема</a>
       <a href="#route">Маршрут</a>
-      <a href="#boards">Jira</a>
-      <a href="#program">Программа</a>
+      <a href="#measures">Мероприятия</a>
+      <a href="#boards">Контур</a>
       <a href="#offer">Форматы</a>
       <a href="#contact">Заявка</a>
     </nav>
@@ -43,258 +44,391 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="hero__bg" aria-hidden="true">
-        <div class="hero__mesh"></div>
-        <svg class="hero__visual" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#C00000" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#1A1A1A" stop-opacity="0.25"/>
-            </linearGradient>
-          </defs>
-          <!-- Timeline mock -->
-          <rect x="120" y="100" width="700" height="480" rx="6" stroke="url(#g1)" stroke-width="1.5" opacity="0.75"/>
-          <text x="150" y="145" fill="#666" font-family="Onest, sans-serif" font-size="14">Timeline · люди × задачи</text>
-          <line x1="280" y1="170" x2="280" y2="540" stroke="#e8e4e1" stroke-width="1"/>
-          <line x1="420" y1="170" x2="420" y2="540" stroke="#e8e4e1" stroke-width="1"/>
-          <line x1="560" y1="170" x2="560" y2="540" stroke="#e8e4e1" stroke-width="1"/>
-          <line x1="700" y1="170" x2="700" y2="540" stroke="#e8e4e1" stroke-width="1"/>
-          <text x="150" y="210" fill="#333" font-family="Onest, sans-serif" font-size="13">Аналитик</text>
-          <rect class="bar bar--a" x="300" y="192" width="180" height="22" rx="4" fill="#C00000" opacity="0.85"/>
-          <rect class="bar bar--b" x="500" y="192" width="120" height="22" rx="4" fill="#1A1A1A" opacity="0.55"/>
-          <text x="150" y="270" fill="#333" font-family="Onest, sans-serif" font-size="13">Разработка</text>
-          <rect class="bar bar--c" x="290" y="252" width="260" height="22" rx="4" fill="#C00000" opacity="0.7"/>
-          <text x="150" y="330" fill="#333" font-family="Onest, sans-serif" font-size="13">QA</text>
-          <rect class="bar bar--d" x="420" y="312" width="200" height="22" rx="4" fill="#FB5A5A" opacity="0.85"/>
-          <text x="150" y="390" fill="#333" font-family="Onest, sans-serif" font-size="13">PM</text>
-          <rect class="bar bar--e" x="310" y="372" width="140" height="22" rx="4" fill="#1A1A1A" opacity="0.7"/>
-          <path class="hero__path" d="M160 520 L300 460 L420 490 L560 400 L700 430 L780 360" stroke="#C00000" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="780" cy="360" r="8" fill="#C00000"/>
-        </svg>
-      </div>
-      <div class="hero__content">
-        <p class="brand-hero">PATH</p>
-        <h1>От хаоса к&nbsp;контролю в&nbsp;delivery</h1>
-        <p class="hero__lead">Консалтинг по стабилизации IT-проектов: релизная дисциплина, артефакты в Jira, план/факт, качество и прозрачность для руководства — как рабочий маршрут, а не набор слайдов.</p>
+      <div class="hero__copy">
+        <p class="eyebrow">
+          <span class="lozenge lozenge--inprogress">In progress</span>
+          Программа стабилизации delivery
+        </p>
+        <h1>От хаоса к контролю — без слайдов ради слайдов</h1>
+        <p class="hero__lead">
+          PATH собирает живую программу мер: предсказуемые релизы, чистый вход требований,
+          план/факт по людям и эпикам, отчётность из системы и понятный контур Jira для руководства.
+        </p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#contact">Обсудить проект</a>
-          <a class="btn btn--ghost" href="#route">Смотреть маршрут</a>
+          <a class="btn btn--primary" href="#measures">Смотреть блоки мер</a>
+          <a class="btn btn--subtle" href="#contact">Обсудить проект</a>
         </div>
+        <ul class="hero__meta">
+          <li><strong>24</strong> именованных мероприятия</li>
+          <li><strong>6</strong> управленческих блоков</li>
+          <li><strong>4</strong> типа бордов контроля</li>
+        </ul>
       </div>
+      <aside class="hero-card" aria-hidden="true">
+        <div class="hero-card__bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="hero-card__title">Board · Delivery control</span>
+          <span class="lozenge lozenge--done">On track</span>
+        </div>
+        <div class="hero-card__row">
+          <span>Release cycle</span>
+          <i style="--l:8%;--w:54%"></i>
+          <em>2× / мес</em>
+        </div>
+        <div class="hero-card__row">
+          <span>Quality gate</span>
+          <i class="alt" style="--l:18%;--w:42%"></i>
+          <em>БТ / оценка</em>
+        </div>
+        <div class="hero-card__row">
+          <span>Plan / fact</span>
+          <i class="warn" style="--l:28%;--w:36%"></i>
+          <em>эпики</em>
+        </div>
+        <div class="hero-card__row">
+          <span>Weekly report</span>
+          <i style="--l:12%;--w:48%"></i>
+          <em>авто</em>
+        </div>
+        <p class="hero-card__foot">Сначала артефакты — потом картинка. Полоски появляются, когда заполнены оценка, даты и ответственность.</p>
+      </aside>
     </section>
 
-    <section class="strip" id="pain" aria-label="Для кого">
-      <p>Для команд, где уже есть Jira и спринты, но нет <strong>единого контура контроля</strong>: оценки плывут, релизы рвутся, артефакты не заполнены, а статус собирается вручную.</p>
-    </section>
-
-    <section class="section metrics" aria-label="Масштаб программы">
-      <div class="metrics__grid">
-        <div class="metric">
-          <div class="metric__n">24+</div>
-          <div class="metric__l">инициатив в программе</div>
-        </div>
-        <div class="metric">
-          <div class="metric__n">2×</div>
-          <div class="metric__l">релиза в месяц + HotFix</div>
-        </div>
-        <div class="metric">
-          <div class="metric__n">4</div>
-          <div class="metric__l">типа управляющих бордов</div>
-        </div>
-        <div class="metric">
-          <div class="metric__n">AI</div>
-          <div class="metric__l">отчёты, протоколы, RAG</div>
-        </div>
+    <section class="strip" id="pain">
+      <div class="strip__inner">
+        <p>
+          Для команд, где уже есть Jira и спринты, но нет <strong>единого контура контроля</strong>:
+          оценки плывут, релизы рвутся, требования приходят «как получится», а статус собирается вручную к пятнице.
+        </p>
       </div>
     </section>
 
     <section class="section" id="route">
       <div class="section__head">
+        <p class="kicker">Workstream</p>
         <h2>Маршрут стабилизации</h2>
-        <p>Шесть фаз. Можно идти последовательно или усиливать узкие места — но без фазы артефактов Timeline и план/факт не заработают.</p>
+        <p>Шесть фаз. Можно усиливать узкие места, но без дисциплины артефактов Timeline и план/факт не заработают.</p>
       </div>
-      <ol class="timeline">
-        <li class="timeline__item" data-step="01">
-          <h3>Диагностика и контур управления</h3>
-          <p>Карта болей: релизы, требования, экономика, инциденты. Свод бордов и онлайн-ресурсов, роли PM / junior PM, трекер прогресса программы.</p>
+      <ol class="steps">
+        <li>
+          <span class="steps__n">01</span>
+          <h3>Диагностика и контур</h3>
+          <p>Карта болей: релизы, требования, экономика, инциденты. Свод бордов, роли PM / junior PM, трекер программы.</p>
         </li>
-        <li class="timeline__item" data-step="02">
-          <h3>Delivery и релизная дисциплина</h3>
-          <p>Политика циклов (например 2×/мес), правила HotFix, ретро после релиза с action items в Jira, актуальность авто- и нагрузочных тестов.</p>
+        <li>
+          <span class="steps__n">02</span>
+          <h3>Delivery и релизы</h3>
+          <p>Предсказуемый цикл, правила HotFix, ретро с action items в системе, живые авто- и нагрузочные тесты.</p>
         </li>
-        <li class="timeline__item" data-step="03">
-          <h3>Качество входа: БТ, оценки, ОП</h3>
-          <p>Приём задач только по шаблону бизнес-требований, единый формат оценки, валидация описаний проекта, реестр решений из протоколов.</p>
+        <li>
+          <span class="steps__n">03</span>
+          <h3>Качество входа</h3>
+          <p>Шаблон бизнес-требований как gate, единый формат оценки, валидация описаний, реестр решений из протоколов.</p>
         </li>
-        <li class="timeline__item" data-step="04">
-          <h3>Jira как операционная система</h3>
-          <p>Timeline по людям, спринт-борды с ключевыми артефактами, created vs resolved (развитие и дефекты), поток задач по сотрудникам.</p>
+        <li>
+          <span class="steps__n">04</span>
+          <h3>Jira как операционка</h3>
+          <p>Timeline по людям, спринт-борды с артефактами, поток created/resolved, загрузка по сотрудникам.</p>
         </li>
-        <li class="timeline__item" data-step="05">
+        <li>
+          <span class="steps__n">05</span>
           <h3>План/факт и экономика</h3>
-          <p>Контроль превышений по эпикам и людям, инструмент выборки из Jira, анализ «мусорных» задач, структура перерасхода и план снижения.</p>
+          <p>Превышения по эпикам и людям, выборка из Jira, разбор «мусорных» задач, структура перерасхода.</p>
         </li>
-        <li class="timeline__item" data-step="06">
-          <h3>Прозрачность, AI, заказчик</h3>
-          <p>Дашборд инцидентов, пост-релизная статистика ошибок, авто weekly-отчёт, LLM/RAG по артефактам, автопротоколы, обучение заказчика → меньше ТП.</p>
+        <li>
+          <span class="steps__n">06</span>
+          <h3>Прозрачность и люди</h3>
+          <p>Weekly из системы, инциденты без ручных танцев, обучение заказчика, реакция на итоги контролей.</p>
         </li>
       </ol>
     </section>
 
-    <section class="section section--ink" id="boards">
-      <div class="section__head section__head--light">
-        <h2>Jira-контур, который держит контроль</h2>
-        <p>Четыре типа бордов — поверх классического Scrum. Без заполненных артефактов «колбаски» и метрики не появляются: сначала дисциплина полей, потом визуализация.</p>
+    <section class="section section--soft" id="measures">
+      <div class="section__head">
+        <p class="kicker">Program</p>
+        <h2>Мероприятия по блокам</h2>
+        <p>Все именованные меры живой программы. На сайте — управленческий смысл: что делаем и какой исход, без внутренних ключей и технических выгрузок.</p>
       </div>
 
-      <div class="boards">
-        <article class="board-card">
-          <div class="board-card__label">01 · Timeline</div>
-          <h3>TimeLine как в Project</h3>
-          <p>Визуализация задач «колбасками» на сотрудниках с датой начала и окончания. Полоски видны только если заполнены ключевые артефакты (оценка, start/end, assignee).</p>
-          <div class="mock mock--timeline" aria-hidden="true">
-            <div class="mock__row"><span>Иванов</span><i style="--l:18%;--w:42%"></i></div>
-            <div class="mock__row"><span>Петрова</span><i style="--l:28%;--w:36%" class="mock__bar--dark"></i></div>
-            <div class="mock__row"><span>Сидоров</span><i style="--l:40%;--w:30%" class="mock__bar--soft"></i></div>
-            <div class="mock__row"><span>Козлова</span><i style="--l:22%;--w:48%"></i></div>
-          </div>
-        </article>
-
-        <article class="board-card">
-          <div class="board-card__label">02 · Sprint</div>
-          <h3>Спринты с артефактами</h3>
-          <p>Борды задач по спринтам с обязательным отслеживанием: оценка, дата начала, дата окончания. Incomplete-артефакт = красный сигнал на карточке, а не «сюрприз» на демо.</p>
-          <div class="mock mock--sprint" aria-hidden="true">
-            <div class="mock__col">To Do<span class="chip chip--warn">нет дат</span></div>
-            <div class="mock__col">In Progress<span class="chip">оценка ✓</span></div>
-            <div class="mock__col">Done<span class="chip chip--ok">start/end ✓</span></div>
-          </div>
-        </article>
-
-        <article class="board-card">
-          <div class="board-card__label">03 · Flow</div>
-          <h3>Created vs Resolved</h3>
-          <p>Отдельные борды по команде: задачи развития и отдельно дефекты на горизонте квартала. Видно, растёт ли бэклог или команда «съедает» входящий поток.</p>
-          <div class="mock mock--flow" aria-hidden="true">
-            <div class="mock__bars">
-              <div><em>Created</em><b style="--h:78%"></b></div>
-              <div><em>Resolved</em><b style="--h:62%" class="mock__v--ok"></b></div>
-              <div><em>Bugs in</em><b style="--h:44%" class="mock__v--soft"></b></div>
-              <div><em>Bugs out</em><b style="--h:51%" class="mock__v--ok"></b></div>
-            </div>
-            <p class="mock__caption">Квартал · развитие / дефекты</p>
-          </div>
-        </article>
-
-        <article class="board-card">
-          <div class="board-card__label">04 · People</div>
-          <h3>Поступило / закрыто по людям</h3>
-          <p>Борды входящих и закрытых задач по сотрудникам: кто перегружен входящим, у кого «хвост» не закрывается, где нужна перебалансировка — без еженедельного опроса в чате.</p>
-          <div class="mock mock--people" aria-hidden="true">
-            <div class="mock__person"><span>А</span><div><i style="--w:70%"></i><i style="--w:55%" class="ok"></i></div></div>
-            <div class="mock__person"><span>Б</span><div><i style="--w:90%"></i><i style="--w:40%" class="ok"></i></div></div>
-            <div class="mock__person"><span>В</span><div><i style="--w:50%"></i><i style="--w:60%" class="ok"></i></div></div>
-          </div>
-        </article>
+      <div class="tabs" role="tablist" aria-label="Блоки программы">
+        <button type="button" class="tabs__btn is-active" data-block="all" role="tab" aria-selected="true">Все</button>
+        <button type="button" class="tabs__btn" data-block="delivery" role="tab">Delivery</button>
+        <button type="button" class="tabs__btn" data-block="quality" role="tab">Качество</button>
+        <button type="button" class="tabs__btn" data-block="planfact" role="tab">План/факт</button>
+        <button type="button" class="tabs__btn" data-block="report" role="tab">Отчётность</button>
+        <button type="button" class="tabs__btn" data-block="people" role="tab">Люди</button>
+        <button type="button" class="tabs__btn" data-block="tools" role="tab">Инструменты</button>
       </div>
+
+      <article class="block" data-block="delivery" id="block-delivery">
+        <header class="block__head">
+          <div>
+            <h3>Delivery и релизная дисциплина</h3>
+            <p>Зачем: выпуск должен быть предсказуемым, а не «когда успеем». Исход — ритм, меньше HotFix и измеримые улучшения после каждого цикла.</p>
+          </div>
+          <span class="lozenge lozenge--inprogress">4 меры</span>
+        </header>
+        <div class="measure-grid">
+          <article class="measure">
+            <h4>Релизный цикл и политика HotFix</h4>
+            <p>Фиксируем график выпусков и правила внеплановых сборок: HotFix только на критичную работоспособность. Задачи без приёмки к дедлайну не «протаскиваются» в версию.</p>
+          </article>
+          <article class="measure">
+            <h4>Ретро после каждого релиза</h4>
+            <p>Встреча за 1–2 дня после выпуска. Ценность не в протоколе, а в action items: исполнитель, срок и критерий Done в системе.</p>
+          </article>
+          <article class="measure">
+            <h4>Живые автотесты и нагрузка</h4>
+            <p>Актуализация авто- и нагрузочных сценариев — регулярная часть цикла, не разовая кампания. Контрольные встречи по стабильности прогонов.</p>
+          </article>
+          <article class="measure">
+            <h4>Пост-релизная статистика ошибок</h4>
+            <p>После каждой версии считаем внутренние дефекты и замечания приёмки. Кривая вниз — доказательство качества, а не ощущение «вроде лучше».</p>
+          </article>
+        </div>
+        <div class="practice">
+          <p class="practice__label">Практики из ретро</p>
+          <ul>
+            <li>Переключатели функциональности в сложных интеграциях</li>
+            <li>Копия промышленной среды перед выкладкой</li>
+            <li>Баг с прода → сценарий в автотестах</li>
+            <li>Документация обновляется вместе с задачей</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="block" data-block="quality" id="block-quality">
+        <header class="block__head">
+          <div>
+            <h3>Качество входа: требования и оценка</h3>
+            <p>Зачем: дорого чинить недосказанность на середине спринта. Исход — меньше уточнений, проверяемая оценка и решения, которые не теряются в чатах.</p>
+          </div>
+          <span class="lozenge lozenge--inprogress">4 меры</span>
+        </header>
+        <div class="measure-grid">
+          <article class="measure">
+            <h4>Шаблон бизнес-требований как gate</h4>
+            <p>Новые задачи принимаем только в утверждённом формате. Шаблон живой: раз в квартал спрашиваем заказчика, чего не хватает, и синхронизируем версию.</p>
+          </article>
+          <article class="measure">
+            <h4>Единый шаблон оценки</h4>
+            <p>Оценка раскладывается на анализ, разработку, тесты, зависимости и опцию «быстро / целевое». Разговор про стоимость идёт по строкам, не про «магическую цифру».</p>
+          </article>
+          <article class="measure">
+            <h4>Валидация описаний проекта</h4>
+            <p>Черновик проходит совместную сессию: структура, однозначность, сценарии, правила, интерфейсы, интеграции. «Принято» или список правок — до старта разработки.</p>
+          </article>
+          <article class="measure">
+            <h4>Реестр решений из протоколов</h4>
+            <p>Все договорённости сводим в один живой документ: принятые решения со ссылкой на задачу и открытый бэклог действий. Повторные разговоры о том же сокращаются.</p>
+          </article>
+        </div>
+        <div class="practice">
+          <p class="practice__label">Усиление оценки</p>
+          <ul>
+            <li>Сегментированная оценка по этапам и опциям бюджета</li>
+            <li>Коммуникация на стыке ролей: один источник правды в карточке</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="block" data-block="planfact" id="block-planfact">
+        <header class="block__head">
+          <div>
+            <h3>План/факт и экономика</h3>
+            <p>Зачем: перерасход видно слишком поздно и «средней температурой». Исход — раннее предупреждение, точечный разбор и чистый бэклог.</p>
+          </div>
+          <span class="lozenge lozenge--inprogress">4 меры</span>
+        </header>
+        <div class="measure-grid">
+          <article class="measure">
+            <h4>Контроль превышений по эпикам</h4>
+            <p>Регулярная выборка план/факт. Причины фиксируем, эскалация — линейным руководителям и, если нужно, заказчику: scope, бюджет или остановка направления.</p>
+          </article>
+          <article class="measure">
+            <h4>Инструмент выборки превышений</h4>
+            <p>Конвейер: фильтр в Jira → выгрузка → свод по задачам и людям. Встречи назначаем только тем, у кого отклонение выше порога — без всеобщего созвона.</p>
+          </article>
+          <article class="measure">
+            <h4>Ревизия «мусорных» задач</h4>
+            <p>Закрытые эпики с открытыми детьми, висяки старше года, статусный шум. Еженедельно правим процесс, ежемесячно решаем судьбу старых карточек — кроме явного техдолга.</p>
+          </article>
+          <article class="measure">
+            <h4>Структура перерасхода</h4>
+            <p>Разбор полугода: из чего складывается минус и почему. На выходе — план снижения, а не ещё один отчёт «факт больше плана».</p>
+          </article>
+        </div>
+      </article>
+
+      <article class="block" data-block="report" id="block-report">
+        <header class="block__head">
+          <div>
+            <h3>Отчётность и прозрачность</h3>
+            <p>Зачем: статус не должен рождаться в пятничном Excel-штурме. Исход — одни и те же цифры для команды, аккаунта и заказчика.</p>
+          </div>
+          <span class="lozenge lozenge--inprogress">5 мер</span>
+        </header>
+        <div class="measure-grid">
+          <article class="measure">
+            <h4>Оперативная статистика проблем спринта</h4>
+            <p>Ежедневный сбор препятствий по единому шаблону, недельный разбор стендапов, единая таблица проблем. Повторяющиеся блокеры становятся видимыми.</p>
+          </article>
+          <article class="measure">
+            <h4>Автоматический weekly заказчику</h4>
+            <p>Отчёт собирается из системы в привычном формате по кнопке. Часы аналитики уходят в смысл, а не в копирование столбцов.</p>
+          </article>
+          <article class="measure">
+            <h4>Дашборд инцидентов и недоступности</h4>
+            <p>Реальная картина сбоев по договору сопровождения — из системы, без многоразовых созвонов. Если данных нет, чиним процесс учёта, а не рисуем слайд.</p>
+          </article>
+          <article class="measure">
+            <h4>Презентация внутренних мер</h4>
+            <p>Заказчик видит, что поддержка платформы — проактивная программа: мониторинг, качество, релизы, экономика. И что часть работы зависит от полноты его требований.</p>
+          </article>
+          <article class="measure">
+            <h4>Трекер прогресса программы</h4>
+            <p>Одна таблица по всем мерам: что сдвинулось, следующий шаг, открытый вопрос, кто ведёт. Программа сама не теряется среди продуктовых эпиков.</p>
+          </article>
+        </div>
+      </article>
+
+      <article class="block" data-block="people" id="block-people">
+        <header class="block__head">
+          <div>
+            <h3>Люди и компетенции</h3>
+            <p>Зачем: контур не держится на одном PM. Исход — операционная смена, работа с составом по фактам контролей и меньше обращений «научите нажать кнопку».</p>
+          </div>
+          <span class="lozenge lozenge--inprogress">3 меры</span>
+        </header>
+        <div class="measure-grid">
+          <article class="measure">
+            <h4>Контур младшего PM</h4>
+            <p>Фильтр входящих, борды, daily, консолидация оценок, релизный статус и сопровождение интеграций. Старший PM занимается решениями, а не администрированием чатов.</p>
+          </article>
+          <article class="measure">
+            <h4>Реакция на итоги контролей</h4>
+            <p>Если превышения и «минуса» не меняются после таймаута — пересматриваем состав, оценку и распределение работ. Решения опираются на фактуру план/факт, не на ощущения.</p>
+          </article>
+          <article class="measure">
+            <h4>Обучение заказчика — меньше ТП</h4>
+            <p>Практические сценарии самообслуживания по типовым операциям. Нестандарт остаётся у второй линии. Меньше тикетов — быстрее ответы по реальным инцидентам.</p>
+          </article>
+        </div>
+      </article>
+
+      <article class="block" data-block="tools" id="block-tools">
+        <header class="block__head">
+          <div>
+            <h3>Инструменты: Jira, PATH, AI в PMO</h3>
+            <p>Зачем: контроль должен жить в одном контуре, а не в десяти ссылках «у кого-то в закладках». Исход — операционка + ускорение рутины без потери смысла.</p>
+          </div>
+          <span class="lozenge lozenge--inprogress">4 меры</span>
+        </header>
+        <div class="measure-grid">
+          <article class="measure">
+            <h4>Свод бордов и онлайн-ресурсов</h4>
+            <p>Timeline, продуктовые спринты, инциденты, загрузка, эпики и статусные таблицы — в одном каталоге с владельцем актуальности. Это операционная система программы.</p>
+          </article>
+          <article class="measure">
+            <h4>LLM + поиск по артефактам</h4>
+            <p>Исследование ассистента по описаниям, коду и тестам: «уже делали похожее?» Цель — быстрее находить прецеденты и не изобретать заново.</p>
+          </article>
+          <article class="measure">
+            <h4>ИИ в тест-дизайне</h4>
+            <p>Пилот на типичной истории: трудозатраты, срок, качество. Решение масштабировать — только по цифрам и обратной связи QA, не «потому что модно».</p>
+          </article>
+          <article class="measure">
+            <h4>Автопротоколы встреч</h4>
+            <p>Из записи — черновик решений и action items за минуты, не часы. Человек проверяет смысл; рутина расшифровки уходит.</p>
+          </article>
+        </div>
+      </article>
     </section>
 
-    <section class="section" id="program">
+    <section class="section" id="boards">
       <div class="section__head">
-        <h2>Что входит в программу</h2>
-        <p>Опыт живой программы стабилизации на страховом IT-проекте: 24+ инициатив, сгруппированных по контурам. На публичном сайте — без названий заказчиков и внутренних ссылок.</p>
+        <p class="kicker">Control surface</p>
+        <h2>Jira-контур, который держит контроль</h2>
+        <p>Четыре типа бордов поверх классического Scrum. Без заполненных полей «колбаски» и метрики не появляются.</p>
       </div>
-
-      <div class="program">
-        <article class="program__item">
-          <h3>Delivery</h3>
-          <ul>
-            <li>Релизные циклы и политика HotFix</li>
-            <li>Ретро после релиза → измеримые action items</li>
-            <li>Контроль актуальности АТ и НТ</li>
-            <li>Пост-релизный разбор дефектов</li>
-          </ul>
+      <div class="boards">
+        <article class="board">
+          <span class="lozenge lozenge--subtle">01 · Timeline</span>
+          <h3>TimeLine как в Project</h3>
+          <p>Задачи полосками на людях: старт, финиш, исполнитель. Полоска видна только если заполнены оценка и даты.</p>
+          <div class="mock mock--tl" aria-hidden="true">
+            <div><span>A</span><i style="--l:16%;--w:44%"></i></div>
+            <div><span>B</span><i class="alt" style="--l:28%;--w:34%"></i></div>
+            <div><span>C</span><i style="--l:38%;--w:30%"></i></div>
+          </div>
         </article>
-        <article class="program__item">
-          <h3>Требования и аналитика</h3>
-          <ul>
-            <li>Шаблон БТ как gate на вход в разработку</li>
-            <li>Шаблон оценки задач для заказчика</li>
-            <li>Валидация ОП / историй</li>
-            <li>Единый реестр решений из протоколов</li>
-          </ul>
+        <article class="board">
+          <span class="lozenge lozenge--subtle">02 · Sprint</span>
+          <h3>Спринты с артефактами</h3>
+          <p>На карточке сразу видно: нет оценки или дат — сигнал сейчас, а не сюрприз на демо.</p>
+          <div class="mock mock--sp" aria-hidden="true">
+            <div>To Do<span class="lozenge lozenge--warn">нет дат</span></div>
+            <div>In progress<span class="lozenge lozenge--inprogress">оценка</span></div>
+            <div>Done<span class="lozenge lozenge--done">start/end</span></div>
+          </div>
         </article>
-        <article class="program__item">
-          <h3>Экономика</h3>
-          <ul>
-            <li>Контроль превышений по эпикам</li>
-            <li>Выборка план/факт из Jira (tooling)</li>
-            <li>JQL-фильтры «мусорных» задач</li>
-            <li>Структура перерасхода и план снижения</li>
-          </ul>
+        <article class="board">
+          <span class="lozenge lozenge--subtle">03 · Flow</span>
+          <h3>Created vs Resolved</h3>
+          <p>Развитие и дефекты отдельно на горизонте квартала: бэклог растёт или команда его съедает.</p>
+          <div class="mock mock--fl" aria-hidden="true">
+            <div><em>In</em><b style="--h:78%"></b></div>
+            <div><em>Out</em><b class="ok" style="--h:62%"></b></div>
+            <div><em>Bugs</em><b class="soft" style="--h:44%"></b></div>
+          </div>
         </article>
-        <article class="program__item">
-          <h3>Прозрачность</h3>
-          <ul>
-            <li>Дашборд инцидентов / недоступности</li>
-            <li>Оперативная статистика проблем спринта</li>
-            <li>Авто weekly-отчёт заказчику</li>
-            <li>Презентация внутренних мер стабилизации</li>
-          </ul>
-        </article>
-        <article class="program__item">
-          <h3>AI в PMO</h3>
-          <ul>
-            <li>LLM + RAG по проектным артефактам</li>
-            <li>ИИ в тест-дизайне (эксперимент)</li>
-            <li>Автопротоколы встреч</li>
-            <li>Ускорение отчётности без потери смысла</li>
-          </ul>
-        </article>
-        <article class="program__item">
-          <h3>Люди и заказчик</h3>
-          <ul>
-            <li>Контур junior PM на мульти-проектах</li>
-            <li>Реакция на проблемы по итогам контролей</li>
-            <li>Обучение заказчика → меньше обращений в ТП</li>
-            <li>Сводный трекер прогресса программы</li>
-          </ul>
+        <article class="board">
+          <span class="lozenge lozenge--subtle">04 · People</span>
+          <h3>Поступило / закрыто</h3>
+          <p>Кто перегружен входящим, у кого хвост не закрывается — без еженедельного опроса в чате.</p>
+          <div class="mock mock--pe" aria-hidden="true">
+            <div><span>A</span><i style="--w:72%"></i><i class="ok" style="--w:54%"></i></div>
+            <div><span>B</span><i style="--w:90%"></i><i class="ok" style="--w:40%"></i></div>
+            <div><span>C</span><i style="--w:48%"></i><i class="ok" style="--w:60%"></i></div>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="section section--soft" id="principles">
       <div class="section__head">
+        <p class="kicker">Guardrails</p>
         <h2>Принципы, без которых не взлетает</h2>
-        <p>Не «внедрить борды», а изменить правила игры.</p>
+        <p>Не «внедрить борды», а сменить правила игры.</p>
       </div>
       <div class="principles">
         <article>
           <h3>Артефакты раньше картинок</h3>
-          <p>Timeline и метрики появляются только когда заполнены оценка, даты и ответственность. Иначе визуализация врёт.</p>
+          <p>Timeline и метрики честны только когда заполнены оценка, даты и ответственность.</p>
         </article>
         <article>
           <h3>Ретро → задачи, не протокол</h3>
-          <p>Каждый релизный цикл заканчивается action items в Jira с исполнителем, сроком и критерием Done.</p>
+          <p>Каждый цикл заканчивается action items с исполнителем, сроком и критерием Done.</p>
         </article>
         <article>
           <h3>Один язык контроля</h3>
-          <p>Превышения смотрят по людям и задачам, а не «средней температуре» по команде. Разбор — точечный.</p>
+          <p>Превышения смотрим по людям и задачам, не по средней температуре команды.</p>
         </article>
         <article>
           <h3>Прозрачность для заказчика</h3>
-          <p>Weekly и статус портфеля собираются из системы, а не из пятничного штурма в Excel.</p>
+          <p>Weekly и статус портфеля собираются из системы, а не из пятничного штурма.</p>
         </article>
       </div>
     </section>
 
     <section class="section" id="offer">
       <div class="section__head">
+        <p class="kicker">Ways of working</p>
         <h2>Форматы сопровождения</h2>
-        <p>От диагностики до полного запуска контура. Финальная смета — после скоупа команды и зрелости процессов.</p>
+        <p>От диагностики до запуска контура. Смета — после скоупа команды и зрелости процессов.</p>
       </div>
       <div class="offer">
-        <article class="offer__item">
+        <article class="offer__card">
           <h3>Диагностика</h3>
           <p class="offer__price">от 120&nbsp;000&nbsp;₽</p>
           <ul>
@@ -302,9 +436,10 @@
             <li>Карта разрывов и быстрых побед</li>
             <li>Приоритизированный backlog мер</li>
           </ul>
-          <a href="#contact" class="btn btn--ghost">Запросить</a>
+          <a href="#contact" class="btn btn--subtle">Запросить</a>
         </article>
-        <article class="offer__item offer__item--accent">
+        <article class="offer__card offer__card--accent">
+          <span class="lozenge lozenge--inprogress">Рекомендуем</span>
           <h3>Запуск контура</h3>
           <p class="offer__price">от 450&nbsp;000&nbsp;₽</p>
           <ul>
@@ -315,26 +450,27 @@
           </ul>
           <a href="#contact" class="btn btn--primary">Выбрать</a>
         </article>
-        <article class="offer__item">
+        <article class="offer__card">
           <h3>Программа 90 дней</h3>
           <p class="offer__price">по смете</p>
           <ul>
-            <li>Полный маршрут стабилизации</li>
+            <li>Полный маршрут и 6 блоков мер</li>
             <li>AI-отчётность и протоколы</li>
             <li>Контроль экономики и качества</li>
             <li>Передача контура команде</li>
           </ul>
-          <a href="#contact" class="btn btn--ghost">Обсудить</a>
+          <a href="#contact" class="btn btn--subtle">Обсудить</a>
         </article>
       </div>
-      <p class="offer__note">Цены ориентировочные для планирования бюджета. Работаем с product- и insurance-командами, где уже есть Jira / спринты / внешний или внутренний заказчик.</p>
+      <p class="offer__note">Цены ориентировочные для планирования бюджета. Работаем с product- и insurance-командами, где уже есть Jira, спринты и внешний или внутренний заказчик.</p>
     </section>
 
     <section class="section section--contact" id="contact">
       <div class="contact">
-        <div class="contact__copy">
+        <div>
+          <p class="kicker">Next step</p>
           <h2>Заявка на стабилизацию</h2>
-          <p>Опишите размер команды, боль (релизы, оценки, прозрачность) и желаемый горизонт. Ответим с форматом и следующим шагом.</p>
+          <p>Опишите размер команды, боль и горизонт. Ответим форматом и следующим шагом.</p>
           <p class="contact__alt">Или сразу: <a href="mailto:sorvanovon@yandex.ru">sorvanovon@yandex.ru</a> · <a href="https://t.me/puholet" target="_blank" rel="noopener">@puholet</a></p>
         </div>
         <form class="form" id="lead-form" novalidate>
@@ -346,13 +482,13 @@
             <span>Компания</span>
             <input name="company" type="text" required autocomplete="organization" placeholder="Организация" />
           </label>
-          <label>
+          <label class="form__full">
             <span>Почта</span>
             <input name="email" type="email" required autocomplete="email" placeholder="name@company.ru" />
           </label>
           <label class="form__full">
             <span>О ситуации</span>
-            <textarea name="message" rows="4" required placeholder="Команда, стек процессов, что болит сильнее всего"></textarea>
+            <textarea name="message" rows="4" required placeholder="Команда, что болит сильнее всего, желаемый горизонт"></textarea>
           </label>
           <button class="btn btn--primary form__submit" type="submit">Отправить заявку</button>
           <p class="form__status" role="status" aria-live="polite"></p>
@@ -363,7 +499,12 @@
 
   <footer class="footer">
     <div class="footer__inner">
-      <span class="brand brand--footer"><span class="brand__mark" aria-hidden="true"></span> PATH</span>
+      <span class="brand brand--foot">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 17.5 10.2 6.2a1.6 1.6 0 0 1 2.8 0L19 17.5H4Z" fill="#1868DB"/></svg>
+        </span>
+        PATH
+      </span>
       <p>Консалтинг по стабилизации IT-delivery · от хаоса к контролю</p>
     </div>
   </footer>
