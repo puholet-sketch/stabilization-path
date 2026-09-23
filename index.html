@@ -26,7 +26,7 @@
         <a href="#route">Маршрут</a>
         <a href="#measures">Мероприятия</a>
         <a href="#boards">Контур</a>
-        <a href="#offer">Форматы</a>
+        <a href="#offer">Сопровождение</a>
         <a href="#contact" class="btn btn--primary btn--sm">Заявка</a>
       </nav>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
@@ -37,7 +37,7 @@
       <a href="#route">Маршрут</a>
       <a href="#measures">Мероприятия</a>
       <a href="#boards">Контур</a>
-      <a href="#offer">Форматы</a>
+      <a href="#offer">Сопровождение</a>
       <a href="#contact">Заявка</a>
     </nav>
   </header>
@@ -493,45 +493,104 @@
       <div class="shell">
         <div class="section__head">
           <p class="kicker">Ways of working</p>
-          <h2>Форматы сопровождения</h2>
-          <p>От диагностики до запуска контура. Детали и состав работ — после знакомства с командой и зрелостью процессов.</p>
+          <h2>Как устроено сопровождение</h2>
+          <p>Один маршрут в три этапа: сначала картина разрывов, затем рабочий контур в Jira, потом закрепление на 90 дней. Состав работ уточняем после знакомства с командой и зрелостью процессов.</p>
         </div>
-        <div class="offer">
-          <article class="offer__card">
-            <h3>Диагностика</h3>
-            <p class="offer__lead">Быстрый аудит текущего контура</p>
-            <ul>
-              <li>Аудит Jira, релизов, артефактов</li>
-              <li>Карта разрывов и быстрых побед</li>
-              <li>Приоритизированный backlog мер</li>
-            </ul>
-            <a href="#contact" class="btn btn--subtle">Запросить</a>
-          </article>
-          <article class="offer__card offer__card--accent">
-            <span class="lozenge lozenge--inprogress">Рекомендуем</span>
-            <h3>Запуск контура</h3>
-            <p class="offer__lead">Рабочий контур контроля под ключ</p>
-            <ul>
-              <li>4 типа бордов + правила артефактов</li>
-              <li>Релизная политика и шаблоны БТ/оценки</li>
-              <li>План/факт и первые отчёты</li>
-              <li>Онбординг PM и лидов</li>
-            </ul>
-            <a href="#contact" class="btn btn--primary">Выбрать</a>
-          </article>
-          <article class="offer__card">
-            <h3>Программа 90 дней</h3>
-            <p class="offer__lead">Полный маршрут стабилизации</p>
-            <ul>
-              <li>Полный маршрут и 6 блоков мер</li>
-              <li>AI-отчётность и протоколы</li>
-              <li>Контроль экономики и качества</li>
-              <li>Передача контура команде</li>
-            </ul>
-            <a href="#contact" class="btn btn--subtle">Обсудить</a>
-          </article>
-        </div>
-        <p class="offer__note">Работаем с product- и insurance-командами, где уже есть Jira, спринты и внешний или внутренний заказчик.</p>
+
+        <ol class="journey" aria-label="Этапы сопровождения">
+          <li class="journey__step">
+            <div class="journey__rail" aria-hidden="true">
+              <span class="journey__node">1</span>
+              <span class="journey__line"></span>
+            </div>
+            <div class="journey__panel">
+              <div class="journey__chips">
+                <span class="lozenge lozenge--subtle">Этап 01</span>
+                <span class="chip">2 нед</span>
+                <span class="chip chip--soft">аудит</span>
+              </div>
+              <h3>Диагностика</h3>
+              <p class="journey__lead">Быстрый разбор текущего контура: где теряется контроль и что чинится первым.</p>
+              <div class="journey__split">
+                <div>
+                  <p class="journey__label">Что делаем</p>
+                  <ul>
+                    <li>Аудит Jira, релизов, артефактов</li>
+                    <li>Карта разрывов и быстрых побед</li>
+                    <li>Приоритизированный backlog мер</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="journey__label">Что получает команда</p>
+                  <p class="journey__out">Общая картина разрывов и согласованный backlog мер — без гаданий, с чего начинать.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="journey__step">
+            <div class="journey__rail" aria-hidden="true">
+              <span class="journey__node">2</span>
+              <span class="journey__line"></span>
+            </div>
+            <div class="journey__panel">
+              <div class="journey__chips">
+                <span class="lozenge lozenge--inprogress">Этап 02</span>
+                <span class="chip">4–6 нед</span>
+                <span class="chip chip--soft">внедрение</span>
+              </div>
+              <h3>Запуск контура</h3>
+              <p class="journey__lead">Собираем рабочий контур контроля и вводим его в ежедневную практику команды.</p>
+              <div class="journey__split">
+                <div>
+                  <p class="journey__label">Что делаем</p>
+                  <ul>
+                    <li>4 типа бордов и правила артефактов</li>
+                    <li>Релизная политика и шаблоны БТ/оценки</li>
+                    <li>План/факт и первые отчёты</li>
+                    <li>Онбординг PM и лидов</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="journey__label">Что получает команда</p>
+                  <p class="journey__out">Живой контур в Jira: доски, артефакты, отчётность и роли, которыми уже пользуются.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="journey__step">
+            <div class="journey__rail" aria-hidden="true">
+              <span class="journey__node">3</span>
+            </div>
+            <div class="journey__panel">
+              <div class="journey__chips">
+                <span class="lozenge lozenge--done">Этап 03</span>
+                <span class="chip">90 дней</span>
+                <span class="chip chip--soft">закрепление</span>
+              </div>
+              <h3>Программа 90 дней</h3>
+              <p class="journey__lead">Проходим полный маршрут стабилизации и передаём контур команде.</p>
+              <div class="journey__split">
+                <div>
+                  <p class="journey__label">Что делаем</p>
+                  <ul>
+                    <li>Полный маршрут и 6 блоков мер</li>
+                    <li>AI-отчётность и протоколы</li>
+                    <li>Контроль экономики и качества</li>
+                    <li>Передача контура команде</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="journey__label">Что получает команда</p>
+                  <p class="journey__out">Устойчивый контур без внешней операционки: команда ведёт контроль сама.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <p class="journey__note">Работаем с product- и insurance-командами, где уже есть Jira, спринты и внешний или внутренний заказчик.</p>
       </div>
     </section>
 

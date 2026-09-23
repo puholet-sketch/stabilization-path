@@ -566,7 +566,7 @@ a {
 .measure h4,
 .board h3,
 .principles h3,
-.offer__card h3 {
+.journey__panel h3 {
   margin: 0 0 0.45rem;
   letter-spacing: -0.015em;
   color: var(--navy);
@@ -576,7 +576,7 @@ a {
 .steps h3,
 .board h3,
 .principles h3,
-.offer__card h3 {
+.journey__panel h3 {
   font-size: 1.0625rem;
 }
 
@@ -946,61 +946,205 @@ a {
   box-shadow: var(--shadow);
 }
 
-/* —— Offer (no pricing) —— */
-.offer {
+/* —— Journey (ways of working, not packages) —— */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  height: 1.35rem;
+  padding: 0 0.5rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--subtle);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.chip--soft {
+  background: #091e4208;
+  border-color: transparent;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.journey {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  gap: var(--card-gap);
-  grid-template-columns: 1fr;
+  gap: 0;
 }
 
-@media (min-width: 900px) {
-  .offer {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.journey__step {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.85rem 1rem;
+  align-items: stretch;
 }
 
-.offer__card {
+.journey__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+}
+
+.journey__node {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 3px var(--blue-soft);
+  z-index: 1;
+}
+
+.journey__line {
+  flex: 1;
+  width: 2px;
+  min-height: 1.25rem;
+  margin: 0.35rem 0 0;
+  background: linear-gradient(180deg, var(--blue-border), #091e4214);
+  border-radius: 1px;
+}
+
+.journey__step:last-child .journey__line {
+  display: none;
+}
+
+.journey__panel {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.35rem 1.3rem 1.4rem;
+  padding: 1.15rem 1.2rem 1.25rem;
   box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.journey__step:last-child .journey__panel {
+  margin-bottom: 0;
+}
+
+.journey__chips {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.7rem;
 }
 
-.offer__card--accent {
-  border-color: var(--blue-border);
-  box-shadow: 0 0 0 1px var(--blue-border) inset, var(--shadow-raised);
-}
-
-.offer__card .lozenge {
-  margin-bottom: 0.65rem;
-  align-self: flex-start;
-}
-
-.offer__lead {
+.journey__lead {
   margin: 0 0 1rem;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-.offer__card ul {
-  margin: 0 0 1.25rem;
-  padding-left: 1.15rem;
+.journey__split {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .journey__split {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.25rem;
+  }
+}
+
+.journey__label {
+  margin: 0 0 0.45rem;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.journey__split ul {
+  margin: 0;
+  padding-left: 1.1rem;
   color: var(--subtle);
   font-size: 0.9rem;
-  flex: 1;
 }
 
-.offer__card li + li {
-  margin-top: 0.35rem;
+.journey__split li + li {
+  margin-top: 0.3rem;
 }
 
-.offer__note {
+.journey__out {
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  background: var(--blue-soft);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--blue);
+  color: var(--navy);
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.journey__note {
   margin: 1.5rem 0 0;
   color: var(--muted);
   font-size: 0.875rem;
+}
+
+@media (min-width: 960px) {
+  .journey {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.15rem;
+    align-items: stretch;
+  }
+
+  .journey__step {
+    grid-template-columns: 1fr;
+    gap: 0;
+    position: relative;
+  }
+
+  .journey__rail {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .journey__line {
+    display: none;
+  }
+
+  .journey__step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0.85rem;
+    left: calc(50% + 1rem);
+    width: calc(100% - 0.7rem);
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue-border), #dfe1e6);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .journey__panel {
+    margin-bottom: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .journey__split {
+    grid-template-columns: 1fr;
+    margin-top: auto;
+  }
 }
 
 /* —— Contact —— */

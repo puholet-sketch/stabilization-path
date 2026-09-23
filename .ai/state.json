@@ -1,8 +1,8 @@
 {
-  "status": "published Atlassian PATH redesign covering 24 program measures",
+  "status": "offer section redesigned as process journey",
   "goal": "Public PATH site: management narrative of the stabilization program",
-  "next": "Wait for leads; enable Yandex remote if SourceCraft mirror appears",
+  "next": "Gather feedback on journey section; wait for leads",
   "blockers": [],
-  "hot_files": ["index.html", "assets/styles.css", "assets/main.js"],
+  "hot_files": ["index.html", "assets/styles.css"],
   "updated": "2026-09-23"
 }
